@@ -1,5 +1,11 @@
-import Desktop from "@/components/desktop/Desktop";
-import MobileView from "@/components/mobile/MobileView";
+import dynamic from 'next/dynamic';
+
+const Desktop = dynamic(() => import("@/components/desktop/Desktop"), {
+    loading: () => <div className="h-screen w-screen bg-black" />
+});
+const MobileView = dynamic(() => import("@/components/mobile/MobileView"), {
+    loading: () => <div className="h-screen w-screen bg-black" />
+});
 
 export default function Home() {
     return (

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import TopBar from "./TopBar";
 import Dock from "../dock/Dock";
 import { useStore } from "@/store/useStore";
@@ -14,7 +15,7 @@ const rajdhani = Rajdhani({ subsets: ['latin'], weight: ['400', '600', '700'] })
 export default function Desktop() {
     const { windows } = useStore();
     const [introComplete, setIntroComplete] = useState(false);
-    
+
     const questBoxRef = useRef(null);
     const titleRef = useRef(null);
     const line1Ref = useRef(null);
@@ -39,23 +40,23 @@ export default function Desktop() {
                 opacity: 1,
                 scale: 1,
                 duration: 1,
-                delay: 0.5 
+                delay: 0.5
             })
-            // Text Reveal
-            .to([titleRef.current, line1Ref.current, line2Ref.current], {
-                opacity: 1,
-                x: 0,
-                stagger: 0.2,
-                duration: 0.5,
-            })
-            // Float
-            .to(questBoxRef.current, {
-                y: -10,
-                duration: 2,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut"
-            });
+                // Text Reveal
+                .to([titleRef.current, line1Ref.current, line2Ref.current], {
+                    opacity: 1,
+                    x: 0,
+                    stagger: 0.2,
+                    duration: 0.5,
+                })
+                // Float
+                .to(questBoxRef.current, {
+                    y: -10,
+                    duration: 2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
 
         }, questBoxRef);
 
@@ -69,10 +70,18 @@ export default function Desktop() {
             <div
                 className={`w-full h-full relative bg-cover bg-center overflow-hidden transition-opacity duration-1000 ${rajdhani.className}`}
                 style={{
-                    backgroundImage: "url('/images/background_solo.png')",
                     opacity: introComplete ? 1 : 0
                 }}
             >
+                <Image
+                    src="/images/background_solo.png"
+                    alt="Solo Leveling Desktop Background"
+                    fill
+                    priority
+                    quality={90}
+                    className="object-cover -z-10"
+                    draggable={false}
+                />
                 <TopBar />
 
                 {/* FIX: Removed 'pointer-events-none' so WindowManager can receive clicks */}
@@ -81,7 +90,7 @@ export default function Desktop() {
 
                     {/* Quest Box (Only visible when no windows are open) */}
                     {windows.length === 0 && (
-                        <div 
+                        <div
                             ref={questBoxRef}
                             className="absolute left-6 top-20 md:left-12 md:top-32 w-80 md:w-96 p-[2px] bg-gradient-to-b from-blue-500/50 via-blue-900/20 to-transparent rounded-lg backdrop-blur-sm z-10"
                         >
@@ -92,7 +101,7 @@ export default function Desktop() {
                                         System Notification
                                     </h2>
                                 </div>
-                                
+
                                 <div className="space-y-3">
                                     <p ref={line1Ref} className="text-2xl md:text-3xl font-bold text-white drop-shadow-md">
                                         QUEST: <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">EXPLORE PORTFOLIO</span>
@@ -111,7 +120,7 @@ export default function Desktop() {
                 </div>
 
                 <Dock />
-            </div>
+            </div >
         </>
     );
 }
