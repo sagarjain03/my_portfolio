@@ -20,9 +20,16 @@ export default function Desktop() {
     const titleRef = useRef(null);
     const line1Ref = useRef(null);
     const line2Ref = useRef(null);
+    const bgMusicRef = useRef<HTMLAudioElement>(null);
 
     useEffect(() => {
         if (!introComplete) return;
+
+        // Start background music on intro complete
+        if (bgMusicRef.current) {
+            bgMusicRef.current.muted = false;
+            bgMusicRef.current.play().catch(err => console.log('Background music play error:', err));
+        }
 
         // Only run animation if the quest box exists (windows.length === 0)
         if (windows.length > 0) return;
@@ -66,6 +73,15 @@ export default function Desktop() {
     return (
         <>
             {!introComplete && <IntroAnimation onComplete={() => setIntroComplete(true)} />}
+
+            {/* Background Theme Music */}
+            <audio 
+                ref={bgMusicRef} 
+                src="/audio/solo_theme_music.aac"
+                loop
+                muted
+                preload="auto"
+            />
 
             <div
                 className={`w-full h-full relative bg-cover bg-center overflow-hidden transition-opacity duration-1000 ${rajdhani.className}`}
