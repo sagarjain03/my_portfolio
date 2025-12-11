@@ -4,46 +4,53 @@ import { RotateCw, Shield, ChevronLeft, ChevronRight, ExternalLink } from "lucid
 const projects = [
     {
         title: "DropDrive",
-        desc: "Secure Wipe Automation & Certification Tool built using NIST standards for enterprise data sanitization.",
+        desc: "Secure Wipe Automation & Certification Tool. Cross-platform solution for cryptographically secure data wiping (HDD/SSD/NVMe) with NIST/DOD compliance. Features automated JSON/PDF certificate generation, multi-drive detection, and real-time monitoring.",
         tech: ["Node.js", "Electron", "C++", "System API"],
-        image: "https://source.unsplash.com/random/800x600/?cybersecurity,server", 
+        image: "/projects/dropDrive/dropDrive.png",
+        link: "https://drop-drive-website.vercel.app/"
+    },
+    {
+        title: "AndThen",
+        desc: "AI-Powered Interactive Storytelling Platform. A personalized narrative engine where personality scores shape the story. Features choose-your-own-adventure mechanics, immersive book themes, multiplayer collaboration, and a gamified XP system.",
+        tech: ["React", "AI Integration", "Node.js", "MongoDB"],
+        image: "/projects/andThen/andThen.png",
+        link: "https://and-then-nine.vercel.app/"
+    },
+    {
+        title: "NoBrain MERN",
+        desc: "Visual Workflow Automation Platform. Node-based editor for designing complex workflows without coding. Integrates Google Gemini AI for text-to-workflow generation, distinct customization nodes, and a robust backend execution engine.",
+        tech: ["MERN Stack", "React Flow", "Google Gemini AI", "JWT"],
+        image: "/projects/noBrain/noBrain.png",
         link: "#"
     },
     {
-        title: "Skill Trade Platform",
-        desc: "A marketplace for knowledge exchange featuring AI-driven mock interviews and peer-to-peer course selling.",
-        tech: ["React.js", "Node.js", "MongoDB", "Vapi AI", "Socket.io"],
-        image: "https://source.unsplash.com/random/800x600/?coding,collaboration",
-        link: "#"
+        title: "Weatherly",
+        desc: "Modern Weather Dashboard. Fast, responsive app built with React, Vite, and TypeScript. Features real-time weather data, dynamic icons, city search with history, and favorite locations, all styled with Tailwind CSS.",
+        tech: ["React", "Vite", "TypeScript", "Tailwind CSS", "OpenWeatherMap API"],
+        image: "/projects/weatherly/weatherly.png",
+        link: "https://weatherly-three-kappa.vercel.app/"
+    },
+    {
+        title: "Digital Escape Room",
+        desc: "Interactive Puzzle Experience. Engaging escape room game with real-time mechanics and seamless Clerk authentication. Built with React, Vite, and Tailwind CSS for a responsive and immersive user interface.",
+        tech: ["React", "Vite", "Clerk Auth", "Tailwind CSS"],
+        image: "/projects/DigitalEscapeRoom/DigitalEscapeRoom.png",
+        link: "https://digital-escape-room-one.vercel.app/"
+    },
+    {
+        title: "3D Solar System",
+        desc: "Interactive 3D Solar System. A 3D simulation of planets revolving using Three.js and GSAP. Features detailed textures, realistic background, and smooth animations.",
+        tech: ["Three.js", "GSAP", "3D Modeling"],
+        image: "/projects/Planet3D/planet.png",
+        link: "https://3js-planet-project.vercel.app/"
     },
     {
         title: "Research Scholar System",
-        desc: "Full-stack tracking system for PhD scholars integrating ML/SHAP for predictive progress analysis.",
-        tech: ["Python", "scikit-learn", "SHAP", "React", "FastAPI"],
-        image: "https://source.unsplash.com/random/800x600/?data,analytics",
-        link: "#"
-    },
-    {
-        title: "NO-Brain",
-        desc: "An interactive portfolio website mimicking a desktop operating system complete with a window manager and dock.",
-        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "GSAP"],
-        image: "https://source.unsplash.com/random/800x600/?desktop,interface",
-        link: "#"
-    },
-    {
-        title: "AndThen?",
-        desc: "Interactive educational tool to visualize complex sorting and pathfinding algorithms in real-time.",
-        tech: ["JavaScript", "HTML5 Canvas", "CSS Animations"],
-        image: "https://source.unsplash.com/random/800x600/?algorithm,graph",
-        link: "#"
-    },
-    {
-        title: "weatherly",
-        desc: "Interactive educational tool to visualize complex sorting and pathfinding algorithms in real-time.",
-        tech: ["JavaScript", "HTML5 Canvas", "CSS Animations"],
-        image: "https://source.unsplash.com/random/800x600/?algorithm,graph",
-        link: "#"
-    },
+        desc: "AI-Driven Research Management. A prediction and tracking tool to prevent thesis delays. Tracks scholar activities, flags risks using ML models, and provides actionable insights for students and supervisors.",
+        tech: ["Python", "scikit-learn", "Full Stack", "ML"],
+        image: "/projects/reserachScholarSystem/rss.png",
+        link: "https://research-scholar-system.vercel.app/"
+    }
 ];
 
 export default function Safari() {
@@ -81,7 +88,7 @@ export default function Safari() {
                             <ProjectCard key={index} {...project} />
                         ))}
                     </div>
-                    
+
                     <div className="text-center text-gray-400 text-sm py-8">
                         End of Results
                     </div>
@@ -95,9 +102,9 @@ export default function Safari() {
 
 function ProjectCard({ title, desc, tech, image, link }: { title: string, desc: string, tech: string[], image: string, link: string }) {
     return (
-        <a 
-            href={link} 
-            target="_blank" 
+        <a
+            href={link}
+            target="_blank"
             rel="noopener noreferrer"
             className="group block bg-white rounded-2xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out"
         >
@@ -105,9 +112,9 @@ function ProjectCard({ title, desc, tech, image, link }: { title: string, desc: 
             <div className="relative h-48 overflow-hidden bg-gray-100">
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors z-10"></div>
                 {/* Using standard img tag for compatibility. Replace with next/image if preferred */}
-                <img 
-                    src={image} 
-                    alt={title} 
+                <img
+                    src={image}
+                    alt={title}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
                     loading="lazy"
                 />
@@ -125,12 +132,12 @@ function ProjectCard({ title, desc, tech, image, link }: { title: string, desc: 
                 <p className="text-gray-600 text-sm leading-relaxed mb-5 line-clamp-3">
                     {desc}
                 </p>
-                
+
                 {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2">
                     {tech.map((t, i) => (
-                        <span 
-                            key={i} 
+                        <span
+                            key={i}
                             className="px-2.5 py-1 text-[11px] uppercase tracking-wider font-medium bg-gray-50 text-gray-600 rounded-md border border-gray-100 group-hover:border-blue-100 group-hover:bg-blue-50/50 group-hover:text-blue-700 transition-colors"
                         >
                             {t}

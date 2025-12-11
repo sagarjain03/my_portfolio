@@ -115,7 +115,7 @@ export default function TopBar() {
                         className={`relative w-4 h-4 cursor-pointer hover:opacity-80 ${activeMenu === 'apple' ? 'opacity-100' : 'opacity-90'}`}
                         onClick={() => toggleMenu('apple')}
                     >
-                        <Image src="/images/logo.svg" alt="Apple" fill className="object-contain" />
+                        <Image src="/images/apple.png" alt="Apple" fill className="object-contain" />
                     </div>
                     {activeMenu === 'apple' && <Dropdown items={menuItems.apple} />}
                 </div>
