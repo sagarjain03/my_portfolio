@@ -1,7 +1,6 @@
 import React from 'react';
 import { RotateCw, Shield, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 
-// Data structure for projects to make adding/removing easier
 const projects = [
     {
         title: "DropDrive",
@@ -33,6 +32,13 @@ const projects = [
     },
     {
         title: "AndThen?",
+        desc: "Interactive educational tool to visualize complex sorting and pathfinding algorithms in real-time.",
+        tech: ["JavaScript", "HTML5 Canvas", "CSS Animations"],
+        image: "https://source.unsplash.com/random/800x600/?algorithm,graph",
+        link: "#"
+    },
+    {
+        title: "weatherly",
         desc: "Interactive educational tool to visualize complex sorting and pathfinding algorithms in real-time.",
         tech: ["JavaScript", "HTML5 Canvas", "CSS Animations"],
         image: "https://source.unsplash.com/random/800x600/?algorithm,graph",
