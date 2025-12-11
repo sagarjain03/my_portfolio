@@ -16,9 +16,30 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
     const textSubRef = useRef(null);
     const characterRef = useRef(null);
     const bgRef = useRef(null);
+    const audioRef = useRef<HTMLAudioElement>(null);
     const [complete, setComplete] = useState(false);
 
     useEffect(() => {
+        // Play audio when intro loads
+        if (audioRef.current) {
+            // Attempt to play - browsers require user interaction or muted autoplay
+            const playPromise = audioRef.current.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(err => console.log('Audio autoplay blocked:', err));
+            }
+        }
+
+        // Enable unmute on any user interaction
+        const handleUserInteraction = () => {
+            if (audioRef.current) {
+                audioRef.current.muted = false;
+                audioRef.current.play().catch(err => console.log('Audio play error:', err));
+            }
+        };
+
+        document.addEventListener('click', handleUserInteraction, { once: true });
+        document.addEventListener('keydown', handleUserInteraction, { once: true });
+
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({
                 onComplete: () => {
@@ -96,7 +117,11 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
 
         }, containerRef);
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert();
+            document.removeEventListener('click', handleUserInteraction);
+            document.removeEventListener('keydown', handleUserInteraction);
+        };
     }, [onComplete]);
 
     if (complete) return null;
@@ -106,6 +131,15 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
             ref={containerRef}
             className={`fixed inset-0 z-[9999] bg-black text-white flex flex-col items-center justify-center overflow-hidden ${rajdhani.className}`}
         >
+            {/* Audio Element */}
+            <audio 
+                ref={audioRef} 
+                src="/audio/solo_leveling_arise.mp3"
+                preload="auto"
+                autoPlay
+                // muted
+            />
+
             {/* Dynamic Background */}
             <div ref={bgRef} className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-900/40 via-black to-black"></div>
