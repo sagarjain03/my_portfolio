@@ -3,59 +3,218 @@ import { Heart, Image as ImageIcon, Award, MapPin, X, ChevronLeft, ChevronRight,
 
 // Mock Data for your achievements/photos
 const galleryItems = [
+    // --- Moments (Internships & Wins) ---
     {
         id: 1,
-        title: "Hackathon Winner",
-        subtitle: "1st Place @ CodeVerse 2025",
-        date: "Oct 12, 2025",
-        image: "https://source.unsplash.com/random/800x600/?hackathon,coding,team",
+        title: "Internship Offer",
+        subtitle: "Acceptance Letter",
+        date: "May 01, 2024",
+        image: "/dock_assets/internship_letter.png",
+        category: "Moments",
+        liked: false
+    },
+    {
+        id: 2,
+        title: "Win 1",
+        subtitle: "Competition Win",
+        date: "2024",
+        image: "/dock_assets/memories/win1.png",
         category: "Awards",
         liked: true
     },
     {
-        id: 2,
-        title: "Google Cloud Certificate",
-        subtitle: "Professional Cloud Architect",
-        date: "Sep 05, 2025",
-        image: "https://source.unsplash.com/random/600x800/?certificate,diploma",
+        id: 3,
+        title: "Win 2",
+        subtitle: "Competition Win",
+        date: "2024",
+        image: "/dock_assets/memories/win2.png",
+        category: "Awards",
+        liked: false
+    },
+
+    // --- Certificates ---
+    {
+        id: 4,
+        title: "Adobe Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/adobe.png",
         category: "Certificates",
         liked: false
     },
     {
-        id: 3,
-        title: "Team Presentation",
-        subtitle: "Demo Day at Microsoft",
-        date: "Aug 20, 2024",
-        image: "https://source.unsplash.com/random/800x800/?presentation,meeting",
-        category: "Moments",
-        liked: true
+        id: 5,
+        title: "Appo Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/appo_certificate.png",
+        category: "Certificates",
+        liked: false
     },
     {
-        id: 4,
-        title: "Open Source Contrib",
-        subtitle: "Merged PR into Next.js",
-        date: "July 15, 2024",
-        image: "https://source.unsplash.com/random/800x500/?code,screen,github",
+        id: 6,
+        title: "Bit By Bit Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/bitByBit.png",
+        category: "Certificates",
+        liked: false
+    },
+    {
+        id: 7,
+        title: "Code For Cause Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/codeForCauseCertificate.png",
+        category: "Certificates",
+        liked: false
+    },
+    {
+        id: 8,
+        title: "Code Verse Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/codeVerse.png",
+        category: "Certificates",
+        liked: false
+    },
+    {
+        id: 9,
+        title: "Hack Mait Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/hackMaitCertificate.png",
+        category: "Certificates",
+        liked: false
+    },
+    {
+        id: 10,
+        title: "Hack With India Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/hackWithIndia.png",
+        category: "Certificates",
+        liked: false
+    },
+    {
+        id: 11,
+        title: "JIMS Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/jims.png",
+        category: "Certificates",
+        liked: false
+    },
+    {
+        id: 12,
+        title: "Snap Syntax Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/snapSyntax.png",
+        category: "Certificates",
+        liked: false
+    },
+    {
+        id: 13,
+        title: "Vihaan 7 Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/vihaan7.png",
+        category: "Certificates",
+        liked: false
+    },
+    {
+        id: 14,
+        title: "Vihaan 8 Certificate",
+        subtitle: "Professional Certificate",
+        date: "2025",
+        image: "/dock_assets/certificates/vihaan8.png",
+        category: "Certificates",
+        liked: false
+    },
+
+    // --- Awards ---
+    // --- More Moments (Memories) ---
+    {
+        id: 16,
+        title: "JIMS Memory",
+        subtitle: "Event Photo",
+        date: "2023",
+        image: "/dock_assets/memories/jims.png",
         category: "Moments",
         liked: false
     },
     {
-        id: 5,
-        title: "Best UI Design",
-        subtitle: "Design Weekly Award",
-        date: "June 10, 2024",
-        image: "https://source.unsplash.com/random/700x700/?ui,design,app",
+        id: 17,
+        title: "JIMS Memory 2",
+        subtitle: "Event Photo",
+        date: "2023",
+        image: "/dock_assets/memories/jims2.png",
+        category: "Moments",
+        liked: false
+    },
+    {
+        id: 18,
+        title: "JIMS Memory 3",
+        subtitle: "Event Photo",
+        date: "2023",
+        image: "/dock_assets/memories/jims3.png",
+        category: "Moments",
+        liked: false
+    },
+    {
+        id: 19,
+        title: "MAIT Memory",
+        subtitle: "Event Photo",
+        date: "2022",
+        image: "/dock_assets/memories/mait.png",
+        category: "Moments",
+        liked: false
+    },
+    {
+        id: 20,
+        title: "MAIT Memory 2",
+        subtitle: "Event Photo",
+        date: "2022",
+        image: "/dock_assets/memories/mait2.png",
+        category: "Moments",
+        liked: false
+    },
+    {
+        id: 21,
+        title: "Microsoft Memory",
+        subtitle: "Top 10 at Microsoft",
+        date: "2021",
+        image: "/dock_assets/memories/Microsoft.png",
         category: "Awards",
         liked: true
     },
     {
-        id: 6,
-        title: "Internship Offer",
-        subtitle: "Acceptance Letter",
-        date: "May 01, 2024",
-        image: "https://source.unsplash.com/random/600x400/?office,work",
+        id: 22,
+        title: "NSUT Memory",
+        subtitle: "Event Photo",
+        date: "2021",
+        image: "/dock_assets/memories/NSUT.png",
+        category: "Moments",
+        liked: true
+    },
+    {
+        id: 23,
+        title: "NSUT Memory 2",
+        subtitle: "Event Photo",
+        date: "2021",
+        image: "/dock_assets/memories/NSUT2.png",
         category: "Moments",
         liked: false
+    },
+    {
+        id: 24,
+        title: "Vihaan Memory",
+        subtitle: "Event Photo",
+        date: "2020",
+        image: "/dock_assets/memories/vihaan.png",
+        category: "Moments",
+        liked: true
     },
 ];
 

@@ -7,7 +7,7 @@ const projects = [
         title: "DropDrive",
         desc: "Secure Wipe Automation & Certification Tool built using NIST standards for enterprise data sanitization.",
         tech: ["Node.js", "Electron", "C++", "System API"],
-        image: "https://source.unsplash.com/random/800x600/?cybersecurity,server", // Replace with your actual project image path e.g., "/images/dropdrive.png"
+        image: "https://source.unsplash.com/random/800x600/?cybersecurity,server", 
         link: "#"
     },
     {
@@ -18,21 +18,21 @@ const projects = [
         link: "#"
     },
     {
-        title: "Scholar Monitor",
+        title: "Research Scholar System",
         desc: "Full-stack tracking system for PhD scholars integrating ML/SHAP for predictive progress analysis.",
         tech: ["Python", "scikit-learn", "SHAP", "React", "FastAPI"],
         image: "https://source.unsplash.com/random/800x600/?data,analytics",
         link: "#"
     },
     {
-        title: "Portfolio OS",
+        title: "NO-Brain",
         desc: "An interactive portfolio website mimicking a desktop operating system complete with a window manager and dock.",
         tech: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "GSAP"],
         image: "https://source.unsplash.com/random/800x600/?desktop,interface",
         link: "#"
     },
     {
-        title: "AlgoVisualizer",
+        title: "AndThen?",
         desc: "Interactive educational tool to visualize complex sorting and pathfinding algorithms in real-time.",
         tech: ["JavaScript", "HTML5 Canvas", "CSS Animations"],
         image: "https://source.unsplash.com/random/800x600/?algorithm,graph",
